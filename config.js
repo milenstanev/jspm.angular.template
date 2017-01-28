@@ -12,17 +12,6 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-  bundles: {
-    "dist/index.bundle.js": [
-      "src/index.js",
-      "src/Controller.js",
-      "npm:babel-runtime@5.8.38/helpers/class-call-check.js",
-      "github:angular-ui/ui-router@0.4.2.js",
-      "github:angular-ui/ui-router@0.4.2/release/angular-ui-router.js",
-      "github:angular/bower-angular@1.6.1.js",
-      "github:angular/bower-angular@1.6.1/angular.js"
-    ]
-  },
 
   map: {
     "angular-ui/ui-router": "github:angular-ui/ui-router@0.4.2",
