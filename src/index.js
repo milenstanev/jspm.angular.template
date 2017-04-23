@@ -27,3 +27,4 @@ component.component('home', {
 });
 
 export default component;
+

@@ -7,6 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "./node_modules/.bin/jspm install -y",
+    "docker-compose": "docker-compose up --build",
+    "bash": "docker-compose exec jspm.angular.app bash",
+    "start": "node ./util/start.js",
+    "start:watch": "npm start --watch",
     "jspm-link": "./node_modules/.bin/jspm link -y",
     "jspm-update": "./node_modules/.bin/jspm update && ./node_modules/.bin/jspm clean",
     "jspm-unbundle": "./node_modules/.bin/jspm unbundle",
@@ -20,7 +24,8 @@
   "jspm": {
     "dependencies": {
       "angular-ui/ui-router": "^0.4.2",
-      "angular/bower-angular": "^1.6.1"
+      "angular/bower-angular": "^1.6.0",
+      "jquery": "npm:jquery@^3.2.1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
@@ -29,6 +34,11 @@
     }
   },
   "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "eslint": "^3.19.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "jspm": "^0.16.53",
     "systemjs-builder": "^0.16.0"
   }
 }
