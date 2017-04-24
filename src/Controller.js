@@ -4,7 +4,7 @@
 class ComponentCtrl {
   constructor() {
     this.user = {
-      name: 'User name asd'
+      name: 'User name'
     };
   }
 }
