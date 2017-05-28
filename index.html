@@ -12,23 +12,6 @@
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-  // https://github.com/systemjs/plugin-babel
-  SystemJS.config({
-    transpiler: "plugin-babel",
-    meta: {
-      '*.js': {
-        babelOptions: {
-          es2017: true
-          ,  react: true
-          , stage1: true
-        }
-      }
-    },
-    map: {
-      'systemjs-babel-build': 'npm:systemjs-plugin-babel@0.0.21/systemjs-babel-browser.js'
-    }
-  });
-
   SystemJS.import('angular/bower-angular').then(function () {
     SystemJS.import('./src/app.js');
   });

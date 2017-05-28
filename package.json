@@ -20,6 +20,7 @@
   "author": "Milen Stanev <milen.stanev@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "browser-sync": "^2.18.12",
     "eslint": "^3.19.0",
     "jspm": "^0.16.51"
   },
@@ -29,22 +30,24 @@
       "angular/bower-angular": "^1.6.0",
       "fs": "jspm/nodelibs-fs@^0.1.2",
       "jquery": "npm:jquery@^3.2.1",
-      "json": "systemjs/plugin-json@^0.3.0",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21"
+      "json": "systemjs/plugin-json@^0.3.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+      "core-js": "npm:core-js@^1.1.4",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21"
     }
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "jspm": "^0.16.46",
     "jspm-git": "^0.6.0",
     "lodash": "^4.15.0",
-    "systemjs-builder": "^0.15.32"
+    "systemjs-builder": "^0.15.32",
+    "underscore": "^1.8.3"
   },
   "repository": "https://github.com/milenstanev/jspm.angular.template.git"
 }

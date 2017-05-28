@@ -9,7 +9,7 @@ const _ = require('underscore');
  */
 const buildConfig = {
   inject: true,
-  minify: false,
+  minify: true,
   mangle: false,
   sourceMaps: true,
   format: 'umd',
@@ -23,7 +23,7 @@ const buildConfig = {
   }*/
 };
 const baseConfig = {
-  /*meta: {
+ /* meta: {
     'angular/bower-angular': {
       build: false
     },
