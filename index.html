@@ -9,10 +9,16 @@
 <div ui-view></div>
 
 <script src="jspm_packages/system.js"></script>
+<!-- TODO: check that -->
+<script src="jspm_packages/system-polyfills.js"></script>
 <script src="config.js"></script>
 
 <script>
-  System.import('./src/index.js');
+  //System.import('./src/app.js');
+  
+  System.import('angular/bower-angular').then(
+    res => System.import('./dist/app.dist')
+  );
 </script>
 </body>
 </html>

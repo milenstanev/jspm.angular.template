@@ -1,7 +1,7 @@
 import angular from 'angular/bower-angular'
 import 'angular-ui/ui-router';
 
-// import home from './home/src/index.js';
+import home from './app.home.js';
 
 /**
  * @desc Description of app

@@ -9,7 +9,7 @@ const _ = require('underscore');
  */
 const buildConfig = {
   inject: true,
-  minify: true,
+  minify: false,
   mangle: false,
   sourceMaps: true,
   format: 'umd',
