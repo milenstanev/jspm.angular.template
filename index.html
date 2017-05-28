@@ -8,17 +8,41 @@
 
 <div ui-view></div>
 
+<!--region development/jspm:bundles dependent on config -->
 <script src="jspm_packages/system.js"></script>
-<!-- TODO: check that -->
-<script src="jspm_packages/system-polyfills.js"></script>
 <script src="config.js"></script>
-
 <script>
-  //System.import('./src/app.js');
-  
-  System.import('angular/bower-angular').then(
-    res => System.import('./dist/app.dist')
-  );
+  // https://github.com/systemjs/plugin-babel
+  SystemJS.config({
+    transpiler: "plugin-babel",
+    meta: {
+      '*.js': {
+        babelOptions: {
+          es2017: true
+          ,  react: true
+          , stage1: true
+        }
+      }
+    },
+    map: {
+      'systemjs-babel-build': 'npm:systemjs-plugin-babel@0.0.21/systemjs-babel-browser.js'
+    }
+  });
+
+  SystemJS.import('angular/bower-angular').then(function () {
+    SystemJS.import('./src/app.js');
+  });
 </script>
+<!--endregion-->
+
+<!--region builder bundle -->
+<!--<script src="jspm_packages/system-csp-production.js"></script>
+<script src="config.js"></script>
+<script>
+  SystemJS.import('dist/app.dist.js').then(function() {
+      SystemJS.import('./src/app');
+    })
+</script>-->
+<!--endregion-->
 </body>
 </html>

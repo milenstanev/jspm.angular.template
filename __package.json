@@ -20,7 +20,6 @@
   "author": "Milen Stanev <milen.stanev@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "eslint": "^3.19.0",
     "jspm": "^0.16.51"
   },
   "jspm": {

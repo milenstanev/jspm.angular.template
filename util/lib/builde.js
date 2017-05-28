@@ -13,17 +13,24 @@ const buildConfig = {
   mangle: false,
   sourceMaps: true,
   format: 'umd',
-  runtime: false
+  runtime: false,
+
+  // TODO: see that
+  /*globalName: 'app',
+  globalDeps: {
+    'angular-ui/ui-router': 'angular',
+    'angular/bower-angular': 'angular-ui-router',
+  }*/
 };
 const baseConfig = {
-  meta: {
-    'angular': {
+  /*meta: {
+    'angular/bower-angular': {
       build: false
     },
     'angular-ui/ui-router': {
       build: false
     }
-  }
+  }*/
 };
 
 function makeBuild(
@@ -40,11 +47,13 @@ function makeBuild(
 
   jspmBuilder.config(config);
 
-  jspmBuilder
+  /*jspmBuilder
     .buildStatic(sourcePath, destinationPath, buildConfig)
       .then(res => console.log('Build complete\n'))
       .catch(err => console.log('Build error\n', err)
-    );
+    );*/
+
+  jspmBuilder.bundle(sourcePath, destinationPath, buildConfig);
 }
 
 module.exports = makeBuild;

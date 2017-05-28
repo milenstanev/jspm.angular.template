@@ -1,4 +1,4 @@
-import angular from 'angular/bower-angular'
+import angular from 'angular/bower-angular';
 import 'angular-ui/ui-router';
 
 import home from './app.home.js';
@@ -23,3 +23,4 @@ app.config(($stateProvider, $urlRouterProvider) => {
 
 angular.bootstrap(document.body, [app.name]);
 
+export default app;

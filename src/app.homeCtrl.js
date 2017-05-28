@@ -1,3 +1,7 @@
+async function foo() {
+  await bar();
+}
+
 class HomeCtrl {
   constructor($http) {
     this.user = {
@@ -8,6 +12,9 @@ class HomeCtrl {
       res => console.log(res)
     )
   }
+
+  static asd = "Asd";
+  qwe = "qwe";
 
   init() {}
 }
