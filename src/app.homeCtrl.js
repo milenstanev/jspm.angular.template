@@ -1,8 +1,4 @@
-async function foo() {
-  await bar();
-}
-
-
+//region test
 class C {
   @enumerable(false)
   method() {}
@@ -19,15 +15,24 @@ function enumerable(value) {
 }
 
 console.log(new C());
+//endregion
 
-//todo: $inject decorator
+//todo: $inject decorator instead of constructor
 class HomeCtrl {
+  /**
+   * @type {{name: string}}
+   */
   user = {
     name: 'User name'
   };
+  /**
+   * @type {Map}
+   */
   map = new Map();
+
   static asd = "Asd";
   qwe = "qwe";
+
 
   init() {
     this.map.set('data', [
@@ -37,6 +42,10 @@ class HomeCtrl {
     ]);
   }
 
+  /**
+   * @desc Provide data to ng-repeat ...
+   * @returns {*|V}
+   */
   getMapData() {
     const data = this.map.get('data');
 
