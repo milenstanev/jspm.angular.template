@@ -1,23 +1,8 @@
-//region test
-class C {
-  @enumerable(false)
-  method() {}
-}
-
-function enumerable(value) {
-  return function (target, key, descriptor) {
-    descriptor.enumerable = value;
-    descriptor.configurable = true;
-
-    //debugger // TODO: See this :) Object.define .etc
-    return descriptor;
-  }
-}
-
-console.log(new C());
-//endregion
-
+/**
+ * Controller
+ */
 //todo: $inject decorator instead of constructor
+//@test
 class HomeCtrl {
   /**
    * @type {{name: string}}
@@ -38,18 +23,9 @@ class HomeCtrl {
     this.map.set('data', [
       {title: '1'},
       {title: '2'},
-      {title: '3'}
+      {title: '3'},
+      {title: '4'}
     ]);
-  }
-
-  /**
-   * @desc Provide data to ng-repeat ...
-   * @returns {*|V}
-   */
-  getMapData() {
-    const data = this.map.get('data');
-
-    return data;
   }
 
   constructor($http) {
@@ -62,5 +38,13 @@ class HomeCtrl {
 }
 
 HomeCtrl.$inject = ['$http'];
+
+function test(ref) {
+  ref.getData = data => {
+    return this.map.get(data);
+  }
+
+  return ref;
+}
 
 export default HomeCtrl;

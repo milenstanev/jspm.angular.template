@@ -12,7 +12,7 @@ const SYNC = true;
  * @todo make it param or something
  * @type {boolean}
  */
-const OPEN_BROWSER = true;
+const OPEN_BROWSER = false;
 
 const SERVER_CONFIG = {
   server: {

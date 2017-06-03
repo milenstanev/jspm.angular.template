@@ -8,8 +8,10 @@ appHome.component('app.home', {
   template: '' +
               '<h1>Home</h1>' +
               '<p>Hello, {{ $ctrl }}!</p>' +
-              'data: {{ $ctrl.map.get("data") }}' +
-              '<div ng-repeat="items in $ctrl.getMapData()">{{items.title}}</div>',
+              'data: {{ data = $ctrl.map.get("data") }}' +
+              '<div ng-repeat="items in data">' +
+                '{{ items }}' +
+              '</div>',
   controller: HomeCtrl
 });
 
