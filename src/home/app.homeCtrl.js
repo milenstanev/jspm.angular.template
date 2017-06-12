@@ -3,6 +3,8 @@
  */
 //todo: $inject decorator instead of constructor
 //@test
+
+
 class HomeCtrl {
   /**
    * @type {{name: string}}
