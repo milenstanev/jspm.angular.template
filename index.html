@@ -12,20 +12,15 @@
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
+  SystemJS.config({
+    map: {
+      'systemjs-babel-build': 'npm:systemjs-plugin-babel@0.0.21/systemjs-babel-browser.js'
+    }
+    , transpiler: 'plugin-babel'
+  });
   SystemJS.import('angular/bower-angular').then(function () {
     SystemJS.import('./src/app.js');
   });
 </script>
-<!--endregion-->
-
-<!--region builder bundle -->
-<!--<script src="jspm_packages/system-csp-production.js"></script>
-<script src="config.js"></script>
-<script>
-  SystemJS.import('dist/app.dist.js').then(function() {
-      SystemJS.import('./src/app');
-    })
-</script>-->
-<!--endregion-->
 </body>
 </html>
