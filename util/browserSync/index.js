@@ -1,28 +1,28 @@
 const browserSync = require('browser-sync').create();
-const jspm = require('jspm');
 const process = require('process');
 
 const ENTRY_POINT = '.';
 const SRC = `${ENTRY_POINT}/src`;
+/**
+ * @todo make it param or something
+ * @type {boolean}
+ */
+const SYNC = true;
+/**
+ * @todo make it param or something
+ * @type {boolean}
+ */
+const OPEN_BROWSER = false;
+
 const SERVER_CONFIG = {
   server: {
     baseDir: `${ENTRY_POINT}/`
   }
-  , open: process.env.npm_config_watch
+  , open: OPEN_BROWSER
 };
 
-jspm.setPackagePath(`${ENTRY_POINT}/`);
-jspm.install(true, { lock: true })
-  .then(startBs, onBsError);
+browserSync.init(SERVER_CONFIG);
 
-function startBs(res) {
-  browserSync.init(SERVER_CONFIG);
-
-  if(process.env.npm_config_watch) {
-    browserSync.watch([SRC], browserSync.reload);
-  }
-}
-
-function onBsError(error) {
-  throw new Error(error)
+if(SYNC) {
+  browserSync.watch([SRC]).on('change', browserSync.reload);
 }

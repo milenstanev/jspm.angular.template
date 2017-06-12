@@ -7,21 +7,19 @@
 <body ng-cloak>
 
 <div ui-view></div>
-<hr>
-<home></home>
 
+<!--region development/jspm:bundles dependent on config -->
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
-
 <script>
-  System.import('./src/index.js').then(function (reference) {
-    angular.module('examlpe.core', [
-      reference.default.name
-    ]);
-
-    angular.bootstrap(document.body, [
-      reference.default.name
-    ]);
+  SystemJS.config({
+    map: {
+      'systemjs-babel-build': 'npm:systemjs-plugin-babel@0.0.21/systemjs-babel-browser.js'
+    }
+    , transpiler: 'plugin-babel'
+  });
+  SystemJS.import('angular/bower-angular').then(function () {
+    SystemJS.import('./src/app.js');
   });
 </script>
 </body>

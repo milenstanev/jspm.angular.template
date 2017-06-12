@@ -1,44 +1,54 @@
 {
-  "name": "milenstanev-jspm.angular.template",
+  "name": "app",
   "version": "0.0.1",
   "description": "",
   "registry": "github",
-  "main": "index.bundle.js",
+  "main": "dist/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/.bin/jspm install -y",
+    "postinstall": "./node_modules/.bin/jspm install -y && ./node_modules/.bin/jspm dl-loader --latest  && jspm dl-loader --babel",
     "docker-compose": "docker-compose up --build",
     "bash": "docker-compose exec jspm.angular.app bash",
     "start": "node ./util/start.js",
     "start:watch": "npm start --watch",
+    "build": "node ./util/dist.js app .",
     "jspm-link": "./node_modules/.bin/jspm link -y",
     "jspm-update": "./node_modules/.bin/jspm update && ./node_modules/.bin/jspm clean",
     "jspm-unbundle": "./node_modules/.bin/jspm unbundle",
-    "jspm-bundle": "./node_modules/.bin/jspm bundle src/index.js dist/index.bundle.js --inject --minify --no-mangle"
+    "jspm-bundle": "./node_modules/.bin/jspm bundle src/app.js dist/app.bundle.js --inject --minify --no-mangle"
   },
-  "author": "",
+  "author": "Milen Stanev <milen.stanev@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "browser-sync": "^2.18.12",
+    "eslint": "^3.19.0",
     "jspm": "^0.16.51"
   },
   "jspm": {
     "dependencies": {
       "angular-ui/ui-router": "^0.4.2",
       "angular/bower-angular": "^1.6.0",
-      "jquery": "npm:jquery@^3.2.1"
+      "fs": "jspm/nodelibs-fs@^0.1.2",
+      "jquery": "npm:jquery@^3.2.1",
+      "json": "systemjs/plugin-json@^0.3.0",
+      "text": "systemjs/plugin-text@^0.0.11"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+      "core-js": "npm:core-js@^1.1.4",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21"
     }
   },
   "devDependencies": {
-    "browser-sync": "^2.18.8",
-    "eslint": "^3.19.0",
-    "fs": "0.0.1-security",
-    "gulp": "^3.9.1",
-    "jspm": "^0.16.53",
-    "systemjs-builder": "^0.16.0"
-  }
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jspm": "^0.16.46",
+    "jspm-git": "^0.6.0",
+    "lodash": "^4.15.0",
+    "systemjs-builder": "^0.15.32",
+    "underscore": "^1.8.3"
+  },
+  "repository": "https://github.com/milenstanev/jspm.angular.template.git"
 }

@@ -4,3 +4,5 @@
 /.idea/
 /npm-debug.log
 /esdoc/
+/src/home/
+/config.js

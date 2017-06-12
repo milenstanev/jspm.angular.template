@@ -1,5 +1,6 @@
-const fs = require('fs');
-const Builder = require('systemjs-builder');
+const jspm = require('jspm');
+const process = require('process')
+const makeBuild = require('./lib/builde.js');
 
 /**
  * Define baseUrl
@@ -7,40 +8,19 @@ const Builder = require('systemjs-builder');
  * .. -> debug, run as node file
  * @type {string}
  */
-const baseUrl = '..';
-/**
- * Configure builder paths
- */
-const builder = new Builder(`${baseUrl}/`, `${baseUrl}/config.js`);
+let baseUrl = '';
 
-builder.config({
-  meta: {
-    'angular': {
-      build: false
-    },
-    'angular-ui/ui-router': {
-      build: false
-    }
-  }
-});
+const appName = process.argv[2]; // required
+baseUrl = process.argv[3] || baseUrl;
+
+jspm.setPackagePath(baseUrl);
+const jspmLoader = new jspm.Loader();
 
 
-builder
-  .buildStatic(
-    `${baseUrl}/src/index.js`,
-    `${baseUrl}/dist/index.dist.js`,
-    {
-      inject: true,
-      minify: true,
-      mangle: false,
-      sourceMaps: true,
-      format: 'umd',
-      runtime: false
-    }
-  ).then(function() {
-  console.log('Build complete\n');
-})
-  .catch(function(err) {
-    console.log('Build error\n');
-    console.log(err);
-});
+jspmLoader.import(`${baseUrl}/builder.json!`).then(
+  builderConfig => makeBuild(
+    appName,
+    baseUrl,
+    builderConfig
+  )
+);
