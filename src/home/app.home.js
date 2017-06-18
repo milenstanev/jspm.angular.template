@@ -1,4 +1,6 @@
-import angular from 'angular/bower-angular';
+import {
+  angular
+} from 'angular-core';
 
 import appHomeTpl from './app.home.html!text';
 import HomeCtrl from './app.homeCtrl.js';

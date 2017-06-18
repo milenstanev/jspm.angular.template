@@ -1,5 +1,6 @@
-import angular from 'angular/bower-angular';
-import 'angular-ui/ui-router';
+import {
+  angular
+} from 'angular-core';
 
 import home from './home/app.home.js';
 

@@ -1,6 +1,19 @@
-const jspm = require('jspm');
-const process = require('process')
-const makeBuild = require('./lib/builde.js');
+"use strict";
+const fs = require('fs');
+const Builder = require('systemjs-builder');
+
+const pjson = require('../package.json');
+
+let builderConfigMeta = {
+  "angular-core": {
+    build: false
+  }
+};
+/*for(let key in pjson.jspm.dependencies) {
+  builderConfigMeta[key] = {
+    build: false
+  };
+}*/
 
 /**
  * Define baseUrl
@@ -8,19 +21,32 @@ const makeBuild = require('./lib/builde.js');
  * .. -> debug, run as node file
  * @type {string}
  */
-let baseUrl = '';
+const baseUrl = '.';
+/**
+ * Configure builder paths
+ */
+const builder = new Builder(`${baseUrl}/`, `${baseUrl}/config.js`);
 
-const appName = process.argv[2]; // required
-baseUrl = process.argv[3] || baseUrl;
+builder.config({
+  meta: builderConfigMeta
+});
 
-jspm.setPackagePath(baseUrl);
-const jspmLoader = new jspm.Loader();
-
-
-jspmLoader.import(`${baseUrl}/builder.json!`).then(
-  builderConfig => makeBuild(
-    appName,
-    baseUrl,
-    builderConfig
-  )
-);
+builder
+  .buildStatic(
+    `${baseUrl}/index.js`,
+    `${baseUrl}/${pjson.name}.js`,
+    {
+      inject: true,
+      minify: true,
+      mangle: false,
+      sourceMaps: true,
+      format: 'umd',
+      runtime: false
+    }
+  ).then(function() {
+  console.log('Build complete\n');
+})
+  .catch(function(err) {
+    console.log('Build error\n');
+    console.log(err);
+  });

@@ -12,14 +12,12 @@
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-  SystemJS.config({
-    map: {
-      'systemjs-babel-build': 'npm:systemjs-plugin-babel@0.0.21/systemjs-babel-browser.js'
-    }
-    , transpiler: 'plugin-babel'
-  });
-  SystemJS.import('angular/bower-angular').then(function () {
-    SystemJS.import('./src/app.js');
+  // Dev and bundle
+  // SystemJS.import('./index.js');
+
+  // Package test
+  SystemJS.import("./package.json!").then(function (pjson) {
+    SystemJS.import(`./${pjson.main}`);
   });
 </script>
 </body>
