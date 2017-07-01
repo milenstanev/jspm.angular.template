@@ -1,6 +1,6 @@
 System.config({
   defaultJSExtensions: true,
-  transpiler: "plugin-babel",
+  transpiler: "systemjs-plugin-babel",
   babelOptions: {
     "optional": [
       "runtime",
@@ -18,7 +18,6 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
     "json": "github:systemjs/plugin-json@0.3.0",
-    "plugin-babel": "npm:systemjs-plugin-babel@0.0.21",
     "plugin-babel-runtime": "npm:babel-runtime@5.8.38",
     "systemjs-babel-build": "npm:systemjs-plugin-babel@0.0.23/systemjs-babel-browser.js",
     "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.23",

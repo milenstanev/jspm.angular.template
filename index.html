@@ -13,12 +13,12 @@
 <script src="config.js"></script>
 <script>
   // Dev and bundle
-  // SystemJS.import('./index.js');
+  SystemJS.import('./index.js');
 
   // Package test
-  SystemJS.import("./package.json!").then(function (pjson) {
+  /*SystemJS.import("./package.json!").then(function (pjson) {
     SystemJS.import(`./${pjson.main}`);
-  });
+  });*/
 </script>
 </body>
 </html>
