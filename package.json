@@ -26,9 +26,7 @@
   },
   "jspm": {
     "dependencies": {
-      "angular-core": "milenstanev/jspm.agnular.core@master",
-      "json": "systemjs/plugin-json@^0.3.0",
-      "text": "systemjs/plugin-text@^0.0.11"
+      "json": "systemjs/plugin-json@^0.3.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
@@ -40,8 +38,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "jspm": "^0.16.46",
     "jspm-git": "^0.6.0",
     "lodash": "^4.15.0",
