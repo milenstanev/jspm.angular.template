@@ -9,11 +9,12 @@ let builderConfigMeta = {
     build: false
   }
 };
-/*for(let key in pjson.jspm.dependencies) {
+
+for(let key in pjson.dependencies) {
   builderConfigMeta[key] = {
     build: false
   };
-}*/
+}
 
 /**
  * Define baseUrl
@@ -50,7 +51,7 @@ builder
       mangle: false,
       sourceMaps: true,
       format: 'umd',
-      runtime: false
+      runtime: true
     }
   ).then(function() {
   console.log('Build complete\n');
