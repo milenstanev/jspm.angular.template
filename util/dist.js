@@ -1,7 +1,6 @@
 "use strict";
 const fs = require('fs');
 const Builder = require('systemjs-builder');
-
 const pjson = require('../package.json');
 
 let builderConfigMeta = {
@@ -10,7 +9,7 @@ let builderConfigMeta = {
   }
 };
 
-for(let key in pjson.dependencies) {
+for(let key in pjson.jspm.dependencies) {
   builderConfigMeta[key] = {
     build: false
   };

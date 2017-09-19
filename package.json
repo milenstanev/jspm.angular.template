@@ -13,7 +13,6 @@
     "docker-stop": "docker-compose stop",
     "bash": "docker-compose exec jspm.angular.app bash",
     "start": "node ./util/start.js",
-    "start:watch": "npm start --watch",
     "build": "node ./util/dist.js app .",
     "jspm-link": "./node_modules/.bin/jspm link -y",
     "jspm-update": "./node_modules/.bin/jspm update && ./node_modules/.bin/jspm clean",

@@ -1350,7 +1350,7 @@ System.config({
       "aproba": "npm:aproba@1.1.2",
       "console-control-strings": "npm:console-control-strings@1.1.0",
       "has-unicode": "npm:has-unicode@2.0.1",
-      "object-assign": "npm:object-assign@4.1.0",
+      "object-assign": "npm:object-assign@4.1.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "signal-exit": "npm:signal-exit@3.0.2",
       "string-width": "npm:string-width@1.0.2",
@@ -2116,7 +2116,7 @@ System.config({
     "npm:output-file-sync@1.1.2": {
       "graceful-fs": "npm:graceful-fs@4.1.11",
       "mkdirp": "npm:mkdirp@0.5.1",
-      "object-assign": "npm:object-assign@4.1.0",
+      "object-assign": "npm:object-assign@4.1.1",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },

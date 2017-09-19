@@ -1,10 +1,10 @@
-import AngularCoreModule from 'angular-core';
+import { angular, CoreModule } from 'angular-core';
 
 import appHome from './home/app.home';
 
 export const Module = angular
   .module('app', [
-    AngularCoreModule,
+    CoreModule,
     appHome
   ])
   .config(($stateProvider, $urlRouterProvider) => {
