@@ -28,13 +28,22 @@ const baseUrl = '.';
 const builder = new Builder(`${baseUrl}/`, `${baseUrl}/config.js`);
 
 builder.config({
-  meta: builderConfigMeta
+  meta: builderConfigMeta,
+  defaultJSExtensions: true,
+  transpiler: "plugin-babel",
+  babelOptions: {
+    presets: ['babel-preset-es2017'],
+    plugins: ['babel-plugin-transform-decorators-legacy']
+  },
+  map: {
+    "systemjs-babel-build": "npm:systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+  }
 });
 
 builder
   .buildStatic(
-    `${baseUrl}/index.js`,
-    `${baseUrl}/${pjson.name}.js`,
+    `${baseUrl}/src/index.js`,
+    `${baseUrl}/${pjson.main}.js`,
     {
       inject: true,
       minify: true,

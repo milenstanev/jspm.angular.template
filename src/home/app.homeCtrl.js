@@ -5,10 +5,14 @@
 //@test
 
 
+function decor(ref) {
+
+
+  return ref;
+}
+
+@decor
 class HomeCtrl {
-  /**
-   * @type {{name: string}}
-   */
   user = {
     name: 'User name'
   };
@@ -19,7 +23,6 @@ class HomeCtrl {
 
   static asd = "Asd";
   qwe = "qwe";
-
 
   init() {
     this.map.set('data', [
@@ -35,18 +38,12 @@ class HomeCtrl {
       res => console.log(res)
     );
 
+    this.asd = 'asd';
+
     this.init();
   }
 }
 
 HomeCtrl.$inject = ['$http'];
-
-function test(ref) {
-  ref.getData = data => {
-    return this.map.get(data);
-  }
-
-  return ref;
-}
 
 export default HomeCtrl;

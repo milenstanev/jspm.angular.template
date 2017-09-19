@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "",
   "registry": "github",
-  "main": "milenstanev-jspm.angular.template",
+  "main": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "./node_modules/.bin/jspm install -y && ./node_modules/.bin/jspm dl-loader --latest  && jspm dl-loader --babel",
-    "docker-compose": "docker-compose up --build",
+    "docker-compose": "docker-compose up --build --force",
+    "docker-start": "docker-compose start",
+    "docker-stop": "docker-compose stop",
     "bash": "docker-compose exec jspm.angular.app bash",
     "start": "node ./util/start.js",
     "start:watch": "npm start --watch",
@@ -20,33 +22,24 @@
   "author": "Milen Stanev <milen.stanev@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "browser-sync": "^2.18.12",
-    "eslint": "^3.19.0",
-    "jspm": "^0.16.51"
+    "angular-core": "milenstanev/mstanev.angular.1.x.x.core@master",
+    "css": "systemjs/plugin-css@^0.1.36",
+    "json": "systemjs/plugin-json@^0.3.0",
+    "text": "systemjs/plugin-text@^0.0.11"
   },
-  "jspm": {
-    "dependencies": {
-      "angular-core": "milenstanev/jspm.agnular.core@master",
-      "json": "systemjs/plugin-json@^0.3.0",
-      "text": "systemjs/plugin-text@^0.0.11"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4",
-      "plugin-babel-runtime": "npm:babel-runtime@^5.8.24",
-      "systemjs-plugin-babel": "npm:systemjs-plugin-babel@^0.0.23"
-    }
-  },
+  "jspm": true,
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "jspm": "^0.16.46",
-    "jspm-git": "^0.6.0",
-    "lodash": "^4.15.0",
-    "systemjs-builder": "^0.15.32",
-    "underscore": "^1.8.3"
+    "babel": "npm:babel-core@^5.8.24",
+    "babel-cli": "npm:babel-cli@^6.26.0",
+    "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@^1.3.4",
+    "babel-preset-es2017": "npm:babel-preset-es2017@^6.24.1",
+    "babel-runtime": "npm:babel-runtime@^5.8.24",
+    "browser-sync": "npm:browser-sync@^2.18.13",
+    "core-js": "npm:core-js@^1.1.4",
+    "eslint": "npm:eslint@^4.7.1",
+    "jspm": "npm:jspm@^0.16.53",
+    "jspm-git": "npm:jspm-git@^0.6.1",
+    "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
   },
   "repository": "https://github.com/milenstanev/jspm.angular.template.git"
 }
