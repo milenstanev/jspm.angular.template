@@ -7,6 +7,7 @@
 
 function decor(ref) {
 
+  console.log(ref)
 
   return ref;
 }

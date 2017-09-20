@@ -7,8 +7,8 @@
   "main": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/.bin/jspm install -y && ./node_modules/.bin/jspm dl-loader --latest  && jspm dl-loader --babel",
-    "docker-compose": "docker-compose up --build --force",
+    "postinstall": "./node_modules/.bin/jspm install -y",
+    "docker-compose": "docker-compose up",
     "docker-start": "docker-compose start",
     "docker-stop": "docker-compose stop",
     "bash": "docker-compose exec jspm.angular.app bash",
@@ -23,14 +23,13 @@
   "license": "ISC",
   "jspm": {
     "dependencies": {
-      "angular-core": "milenstanev/mstanev.angular.1.x.x.core@master",
+      "angular-core": "milenstanev/mstanev.angular.1.x.x.core@^0.0.2",
       "css": "systemjs/plugin-css@^0.1.36",
       "json": "systemjs/plugin-json@^0.3.0",
       "text": "systemjs/plugin-text@^0.0.11"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
-      "babel-cli": "npm:babel-cli@^6.26.0",
       "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@^1.3.4",
       "babel-preset-es2017": "npm:babel-preset-es2017@^6.24.1",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
@@ -39,8 +38,8 @@
     }
   },
   "devDependencies": {
-    "browser-sync": "*",
-    "eslint": "*",
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.7.1",
     "jspm": "^0.16.53"
   }
 }

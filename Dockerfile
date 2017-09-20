@@ -1,7 +1,8 @@
-FROM node:latest
+FROM node:6
 WORKDIR /usr/local/app
 #=== local tools ===#
 RUN apt-get update
 RUN apt-get install nano
-RUN npm i -g jspm gulp
-RUN npm i
+RUN npm install
+COPY ./ /usr/local/app
+RUN npm start
