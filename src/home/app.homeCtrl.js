@@ -1,14 +1,7 @@
 /**
  * Controller
  */
-//todo: $inject decorator instead of constructor
-//@test
-
-
 function decor(ref) {
-
-  console.log(ref)
-
   return ref;
 }
 
@@ -33,7 +26,7 @@ class HomeCtrl {
       {title: '4'}
     ]);
   }
-
+  // TODO: inject decorator
   constructor($http) {
     $http.get('http://localhost:3000/api//svc/translations').then(
       res => console.log(res)
