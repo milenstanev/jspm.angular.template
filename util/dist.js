@@ -49,8 +49,7 @@ builder
       minify: true,
       mangle: false,
       sourceMaps: true,
-      format: 'umd',
-      runtime: true
+      format: 'umd'
     }
   ).then(function() {
   console.log('Build complete\n');
