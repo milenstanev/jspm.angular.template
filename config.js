@@ -13,7 +13,6 @@ System.config({
   },
 
   map: {
-    "angular-core": "github:milenstanev/mstanev.angular.1.x.x.core@0.0.2",
     "babel": "npm:babel-core@5.8.38",
     "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@1.3.4",
     "babel-preset-es2017": "npm:babel-preset-es2017@6.24.1",
@@ -56,15 +55,6 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
-    },
-    "github:milenstanev/mstanev.angular.1.x.x.core@0.0.2": {
-      "angular": "github:angular/bower-angular@1.6.6",
-      "angular-animate": "github:angular/bower-angular-animate@1.6.6",
-      "angular-sanitize": "github:angular/bower-angular-sanitize@1.6.6",
-      "angular-strap": "npm:angular-strap@2.3.12",
-      "angular-ui-router": "npm:@uirouter/angularjs@1.0.6",
-      "jirikavi/AngularJS-Toaster": "github:jirikavi/AngularJS-Toaster@2.2.0",
-      "json": "github:systemjs/plugin-json@0.3.0"
     },
     "github:milenstanev/mstanev.angular.1.x.x.core@0.0.5": {
       "angular": "github:angular/bower-angular@1.6.6",

@@ -1,20 +1,16 @@
-import { angular, CoreModule } from 'angular-core';
+import { angular, CoreModule } from 'milenstanev/mstanev.angular.1.x.x.core';
 
-import appHome from './home/app.home';
+import { appHome } from './home/home.module';
 
 export const Module = angular
   .module('app', [
     CoreModule,
     appHome
   ])
-  .config(($stateProvider, $urlRouterProvider) => {
-    $stateProvider
-      .state('home', {
-        url: '/home',
-        component: 'appHome'
-      });
-
-    return $urlRouterProvider.otherwise('/home');
-  });
-
-angular.bootstrap(document.body, [Module.name]);
+  .component('layout', { // TODO: replace with layout component
+    template: '<div ui-view></div>',
+  })
+  .component('app', {
+    template: '<layout></layout>'
+  })
+  .name;
