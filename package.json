@@ -26,6 +26,7 @@
       "angular-core": "milenstanev/mstanev.angular.1.x.x.core@^0.0.2",
       "css": "systemjs/plugin-css@^0.1.36",
       "json": "systemjs/plugin-json@^0.3.0",
+      "milenstanev/mstanev.angular.1.x.x.core": "^0.0.5",
       "text": "systemjs/plugin-text@^0.0.11"
     },
     "devDependencies": {

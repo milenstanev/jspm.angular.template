@@ -21,6 +21,7 @@ System.config({
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.36",
     "json": "github:systemjs/plugin-json@0.3.0",
+    "milenstanev/mstanev.angular.1.x.x.core": "github:milenstanev/mstanev.angular.1.x.x.core@0.0.5",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
     "text": "github:systemjs/plugin-text@0.0.11",
     "github:angular/bower-angular-animate@1.6.6": {
@@ -57,6 +58,15 @@ System.config({
       "vm-browserify": "npm:vm-browserify@0.0.4"
     },
     "github:milenstanev/mstanev.angular.1.x.x.core@0.0.2": {
+      "angular": "github:angular/bower-angular@1.6.6",
+      "angular-animate": "github:angular/bower-angular-animate@1.6.6",
+      "angular-sanitize": "github:angular/bower-angular-sanitize@1.6.6",
+      "angular-strap": "npm:angular-strap@2.3.12",
+      "angular-ui-router": "npm:@uirouter/angularjs@1.0.6",
+      "jirikavi/AngularJS-Toaster": "github:jirikavi/AngularJS-Toaster@2.2.0",
+      "json": "github:systemjs/plugin-json@0.3.0"
+    },
+    "github:milenstanev/mstanev.angular.1.x.x.core@0.0.5": {
       "angular": "github:angular/bower-angular@1.6.6",
       "angular-animate": "github:angular/bower-angular-animate@1.6.6",
       "angular-sanitize": "github:angular/bower-angular-sanitize@1.6.6",
@@ -149,7 +159,7 @@ System.config({
       "babel-runtime": "npm:babel-runtime@6.26.0",
       "babel-types": "npm:babel-types@6.26.0",
       "babylon": "npm:babylon@6.18.0",
-      "debug": "npm:debug@2.6.8",
+      "debug": "npm:debug@2.6.9",
       "globals": "npm:globals@9.18.0",
       "invariant": "npm:invariant@2.2.2",
       "lodash": "npm:lodash@4.17.4",
@@ -192,7 +202,7 @@ System.config({
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1"
     },
-    "npm:debug@2.6.8": {
+    "npm:debug@2.6.9": {
       "ms": "npm:ms@2.0.0"
     },
     "npm:globals@9.18.0": {
