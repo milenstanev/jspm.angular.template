@@ -1,20 +1,25 @@
-import { angular, CoreModule } from 'angular-core';
+import { angular, CoreModule } from 'milenstanev/mstanev.angular.1.x.x.core';
+//import { appLazyLoadRouterModule, futureRoutesCollection } from 'milenstanev/jspm.angular.lazyload-router';
 
-import appHome from './home/app.home';
+//import { futureRoutes } from './futureRoutes';
+import { appHome } from './home/home.module';
 
 export const Module = angular
   .module('app', [
-    CoreModule,
-    appHome
+    CoreModule
+    //, appLazyLoadRouterModule
+    , appHome
   ])
   .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      .state('home', {
-        url: '/home',
-        component: 'appHome'
+      .state('404', {
+        url: '/404',
+        component: 'page404'
       });
 
-    return $urlRouterProvider.otherwise('/home');
-  });
-
-angular.bootstrap(document.body, [Module.name]);
+    return $urlRouterProvider.otherwise('/404');
+  })
+  .component('page404', {template: '404'})
+  .component('layout', {template: '<div ui-view></div>'})
+  .component('app', {template: '<layout></layout>'})
+  .name;

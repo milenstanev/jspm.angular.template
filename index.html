@@ -1,31 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <!-- dev -->
+  <script src="jspm_packages/system.js"></script>
+  <!-- /dev -->
+
+  <!-- !dev -->
+  <!--   <script src="jspm_packages/system-csp-production.js"></script> -->
+  <!--   <script src="jspm_packages/system-polyfills.js"></script> -->
+  <!-- /!dev -->
+  <script src="config.js"></script>
+
+  <script>
+    <!-- dev -->
+    SystemJS.config({
+      transpiler: "plugin-babel",
+      babelOptions: {
+        presets: ['babel-preset-es2017'],
+        plugins: ['babel-plugin-transform-decorators-legacy']
+      },
+      map: {
+        "systemjs-babel-build": "npm:systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
+      },
+      paths: {
+        "homeComponent": "src/home/home.module.js",
+        "layoutDefault": "src/layout-default/layout-default.module.js"
+      }
+    });
+
+    SystemJS.import('./src/index');
+    <!-- /dev -->
+
+    <!-- !dev -->
+    <!--     SystemJS.config({ -->
+    <!--       transpiler: "babel", -->
+    <!--       paths: { -->
+    <!--         "homeComponent": "src/home/app.home.js" -->
+    <!--       } -->
+    <!--     }) -->
+    <!--     SystemJS.import('dist.js'); -->
+    <!-- /!dev -->
+  </script>
+
 </head>
-<body ng-cloak>
-
-<div ui-view></div>
-
-<script src="jspm_packages/system.js"></script>
-<script src="config.js"></script>
-
-<script>
-  SystemJS.config({
-    defaultJSExtensions: true,
-    transpiler: "plugin-babel",
-    babelOptions: {
-      presets: ['babel-preset-es2017'],
-      plugins: ['babel-plugin-transform-decorators-legacy']
-    },
-    map: {
-      "systemjs-babel-build": "npm:systemjs-plugin-babel@0.0.25/systemjs-babel-browser.js"
-    }
-  });
-
-  //SystemJS.import('./src/index');
-  SystemJS.import('./dist');
-</script>
+<body>
+<app ng-cloak></app>
+<!--region TODO: To be created, this preloader should be on route level, it's about packages preloading runtime. -->
+<app-preloader></app-preloader>
+<!--endregion-->
 </body>
 </html>
