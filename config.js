@@ -20,7 +20,7 @@ System.config({
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.36",
     "json": "github:systemjs/plugin-json@0.3.0",
-    "milenstanev/mstanev.angular.1.x.x.core": "github:milenstanev/mstanev.angular.1.x.x.core@0.0.5",
+    "milenstanev/mstanev.angular.1.x.x.core": "github:milenstanev/mstanev.angular.1.x.x.core@develop",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
     "text": "github:systemjs/plugin-text@0.0.11",
     "github:angular/bower-angular-animate@1.6.6": {
@@ -36,7 +36,7 @@ System.config({
       "assert": "npm:assert@1.4.1"
     },
     "github:jspm/nodelibs-buffer@0.1.1": {
-      "buffer": "npm:buffer@5.0.7"
+      "buffer": "npm:buffer@5.0.8"
     },
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
@@ -56,14 +56,16 @@ System.config({
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
     },
-    "github:milenstanev/mstanev.angular.1.x.x.core@0.0.5": {
-      "angular": "github:angular/bower-angular@1.6.6",
-      "angular-animate": "github:angular/bower-angular-animate@1.6.6",
-      "angular-sanitize": "github:angular/bower-angular-sanitize@1.6.6",
+    "github:milenstanev/mstanev.angular.1.x.x.core@develop": {
       "angular-strap": "npm:angular-strap@2.3.12",
       "angular-ui-router": "npm:@uirouter/angularjs@1.0.6",
+      "angular/bower-angular": "github:angular/bower-angular@1.6.6",
+      "angular/bower-angular-animate": "github:angular/bower-angular-animate@1.6.6",
+      "angular/bower-angular-sanitize": "github:angular/bower-angular-sanitize@1.6.6",
+      "css": "github:systemjs/plugin-css@0.1.36",
       "jirikavi/AngularJS-Toaster": "github:jirikavi/AngularJS-Toaster@2.2.0",
-      "json": "github:systemjs/plugin-json@0.3.0"
+      "json": "github:systemjs/plugin-json@0.3.0",
+      "text": "github:systemjs/plugin-text@0.0.11"
     },
     "npm:@uirouter/angularjs@1.0.6": {
       "@uirouter/core": "npm:@uirouter/core@5.0.6",
@@ -165,7 +167,7 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:buffer@5.0.7": {
+    "npm:buffer@5.0.8": {
       "base64-js": "npm:base64-js@1.2.1",
       "ieee754": "npm:ieee754@1.1.8"
     },
