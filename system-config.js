@@ -1,23 +1,15 @@
 System.config({
+  baseURL: "/",
   defaultJSExtensions: true,
-  transpiler: "babel",
-  babelOptions: {
-    "optional": [
-      "runtime",
-      "optimisation.modules.system"
-    ]
-  },
+  transpiler: false,
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
-    "babel": "npm:babel-core@5.8.38",
     "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@1.3.4",
     "babel-preset-es2017": "npm:babel-preset-es2017@6.24.1",
-    "babel-runtime": "npm:babel-runtime@5.8.38",
-    "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.36",
     "json": "github:systemjs/plugin-json@0.3.0",
     "milenstanev/mstanev.angular.1.x.x.core": "github:milenstanev/mstanev.angular.1.x.x.core@develop",
@@ -62,9 +54,12 @@ System.config({
       "angular/bower-angular": "github:angular/bower-angular@1.6.6",
       "angular/bower-angular-animate": "github:angular/bower-angular-animate@1.6.6",
       "angular/bower-angular-sanitize": "github:angular/bower-angular-sanitize@1.6.6",
+      "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@1.3.4",
+      "babel-preset-es2017": "npm:babel-preset-es2017@6.24.1",
       "css": "github:systemjs/plugin-css@0.1.36",
       "jirikavi/AngularJS-Toaster": "github:jirikavi/AngularJS-Toaster@2.2.0",
       "json": "github:systemjs/plugin-json@0.3.0",
+      "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
       "text": "github:systemjs/plugin-text@0.0.11"
     },
     "npm:@uirouter/angularjs@1.0.6": {
@@ -131,9 +126,6 @@ System.config({
       "babel-plugin-syntax-trailing-function-commas": "npm:babel-plugin-syntax-trailing-function-commas@6.22.0",
       "babel-plugin-transform-async-to-generator": "npm:babel-plugin-transform-async-to-generator@6.24.1"
     },
-    "npm:babel-runtime@5.8.38": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:babel-runtime@6.26.0": {
       "core-js": "npm:core-js@2.5.1",
       "regenerator-runtime": "npm:regenerator-runtime@0.11.0"
@@ -178,12 +170,6 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "strip-ansi": "npm:strip-ansi@3.0.1",
       "supports-color": "npm:supports-color@2.0.0"
-    },
-    "npm:core-js@1.2.7": {
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:core-js@2.5.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",

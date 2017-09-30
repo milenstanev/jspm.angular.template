@@ -23,7 +23,7 @@ const baseUrl = '.';
 /**
  * Configure builder paths
  */
-const builder = new Builder(`${baseUrl}/`, `${baseUrl}/config.js`);
+const builder = new Builder(`${baseUrl}/`, `${baseUrl}/${pjson.jspm.configFile}`);
 
 builder.config({
   meta: builderConfigMeta,

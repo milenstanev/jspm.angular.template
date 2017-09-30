@@ -4,32 +4,30 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <!-- dev -->
-  <script src="jspm_packages/system.js"></script>
+  <!--   <script src="jspm_packages/system.js"></script> -->
   <!-- /dev -->
 
   <!-- !dev -->
-  <!--   <script src="jspm_packages/system-csp-production.js"></script> -->
-  <!--   <script src="jspm_packages/system-polyfills.js"></script> -->
+  <script src="jspm_packages/system.js"></script>
+  <script src="jspm_packages/system-polyfills.js"></script>
   <!-- /!dev -->
-  <script src="config.js"></script>
+  <script src="system-config.js"></script>
 
   <script async>
     <!-- dev -->
-    SystemJS.import('milenstanev/mstanev.angular.1.x.x.core').then(() => {
-      SystemJS.import('./dist').then(res => {
-        angular.bootstrap(document.body, [res.TemplateModule]);
-      })
-    });
+    <!--     SystemJS.import('milenstanev/mstanev.angular.1.x.x.core').then(() => { -->
+      <!--       SystemJS.import('./src/index').then(res => { -->
+        <!--         angular.bootstrap(document.body, [res.TemplateModule]); -->
+        <!--         window.location.hash = '!/home'; -->
+        <!--       }) -->
+      <!--     }); -->
     <!-- /dev -->
 
     <!-- !dev -->
-    <!--     SystemJS.config({ -->
-    <!--       transpiler: "babel", -->
-    <!--       paths: { -->
-    <!--         "homeComponent": "src/home/app.home.js" -->
-    <!--       } -->
-    <!--     }) -->
-    <!--     SystemJS.import('dist.js'); -->
+    SystemJS.import('dist.js').then(res => {
+      angular.bootstrap(document.body, [res.TemplateModule]);
+      window.location.hash = '!/home';
+    })
     <!-- /!dev -->
   </script>
 
