@@ -21,6 +21,7 @@ System.config({
     "core-js": "npm:core-js@1.2.7",
     "css": "github:systemjs/plugin-css@0.1.36",
     "json": "github:systemjs/plugin-json@0.3.0",
+    "testModule": "github:milenstanev/jspm.angular.test-module@master",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.25",
     "text": "github:systemjs/plugin-text@0.0.11",
     "github:angular/bower-angular-animate@1.6.6": {
